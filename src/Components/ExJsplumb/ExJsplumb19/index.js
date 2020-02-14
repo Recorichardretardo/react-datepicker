@@ -285,6 +285,7 @@ export default class ExJsplumb18 extends Component {
     
     function manageZoom(instance, listeningArea, elementToZoom)
     {
+        alert("yes call")
         var minZoom = 0.2,
             maxZoom = 2.0,
             zoomStep = 0.1;

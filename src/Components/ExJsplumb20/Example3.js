@@ -16,8 +16,8 @@ export default class Example3 extends Component {
   componentDidMount() {
     var firstInstance = jsplumb.jsPlumb.getInstance();
     firstInstance.importDefaults({
-      Connector : [ "Bezier", { curviness: 150 } ],
-      Anchors : [ "TopCenter", "BottomCenter" ]
+      Connector : [ "Bezier"],
+      Anchors : [ "TopCenter", "Left" ]
     });
 
     firstInstance.connect({

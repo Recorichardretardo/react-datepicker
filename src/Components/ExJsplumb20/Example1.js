@@ -4,7 +4,7 @@ import jsplumb from 'jsplumb';
 import $ from 'jquery';
 import _ from 'lodash';
 
-export default class Example4 extends Component {
+export default class Example1 extends Component {
     constructor() {
         super();
         this.state = {
@@ -14,21 +14,18 @@ export default class Example4 extends Component {
 
 
   componentDidMount() {
-      let jsPlumbInstance =  jsplumb.jsPlumb.getInstance();
    
-   
-      let e0 =  jsPlumbInstance.addEndpoint("item_left");
-      let e1 =  jsPlumbInstance.addEndpoint("item_right");
+    jsplumb.jsPlumb.ready(function () {
+        jsplumb.jsPlumb.connect({
+            source:"item_left",
+            target:'item_right',
+            connector:["Flowchart",{curviness:1,stub:60},{cssClass:"connectorClass"}],
+           
+        });
 
-      jsPlumbInstance.connect({
-        source:e0,
-        target:e1,
-        connector:["Flowchart",{curviness:1,stub:60},{cssClass:"connectorClass"}],
-       
-    });
-      
-  
-    
+        
+
+      });
   }
 
 
