@@ -14,7 +14,7 @@ import lineClamp from 'line-clamp';
 const colors = scaleOrdinal(schemeCategory10).range();
 
 const data = [
-    {name: 'Page A123', uv: 4000, pv: 2400, amt: 2400},
+    {name: 'Page A12', uv: 4000, pv: 2400, amt: 2400},
     {name: 'Page 333333333333333333', uv: 3000, pv: 1398, amt: 2210},
     {name: 'Page Cccccccccccccc', uv: 2000, pv: 98050, amt: 2290},
     {name: 'Page Dxxxxxxxxxxxxxxxxxxxxxxxxxx', uv: 2780, pv: 39508, amt: 2000},
@@ -121,15 +121,11 @@ const data = [
 
 const CustomYAxisTick =  ({ x, y, payload}) => {
 
-  console.log("ppppp",x,y,payload)
   
       return (<g transform={`translate(${0},${y})`}>
           <text x={0} y={0}
               textAnchor="start"
-              fill="#666"
-              cursor="pointer">{payload.value.length >=10 ? payload.value.substring(0, 10)+'...' :'\xa0\xa0\xa0\xa0\xa0'+ payload.value}
-              <title>{payload.value}</title>
-              </text>
+              fill="#666">{payload.value.length >=10 ? payload.value.substring(0, 10)+'...' : payload.value}</text>
       </g>)
 }  
 

@@ -36,13 +36,13 @@ export const ExportCSV = () => {
 		FileSaver.saveAs(data, fileName + '.txt');	
 	}
 	
-	const exportToPDF = (csvData, fileName) => {
-		const ws = XLSX.utils.json_to_sheet(csvData);
-        const wb = { Sheets: { 'data': ws }, SheetNames: ['data'] };
-        const excelBuffer = XLSX.write(wb, { bookType: 'csv', type: 'array' });
-        const data = new Blob([excelBuffer], {type: "pdf"});
-		FileSaver.saveAs(data, fileName + '.pdf');	
-	}
+	// const exportToPDF = (csvData, fileName) => {
+	// 	const ws = XLSX.utils.json_to_sheet(csvData);
+    //     const wb = { Sheets: { 'data': ws }, SheetNames: ['data'] };
+    //     const excelBuffer = XLSX.write(wb, { bookType: 'csv', type: 'array' });
+    //     const data = new Blob([excelBuffer], {type: "pdf"});
+	// 	FileSaver.saveAs(data, fileName + '.pdf');	
+	// }
 
 	
 
